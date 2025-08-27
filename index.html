@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VasuDev - Full Stack Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+   /* Custom shine animation only for topic badges */
+@keyframes badge-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.topic-badge-shine {
+    animation: badge-shine 2s infinite linear;
+}
+
+/* Shine overlay for topic badges */
+.shine-overlay {
+    background: linear-gradient(110deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.05), 
+        rgba(255, 255, 255, 0.25), 
+        rgba(255, 255, 255, 0.05), 
+        transparent
+    );
+}
+
+/* Enhanced topic badge styling */
+.topic-badge {
+    background: #000; /* pure black */
+    border: 0.5px solid #3f3f46; /* thinner zinc border */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15); /* soft shiny glow */
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.topic-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* stronger glow on hover */
+}
+</style>
+</head>
+<body class="bg-black overflow-auto [&::-webkit-scrollbar]:hidden scrollbar-none">
+   <!-- Floating particles effect -->
+   <div class="floating-particles"></div>
+   
+            <div class="max-w-3xl  h-screen text-zinc-400 mx-auto p-5 main-container rounded-lg">
+              <!-- Navbar -->
+            <div 
+              id="navbar" 
+              class="flex justify-between bg-zinc-950 items-center p-4 h-14 border border-neutral-900 rounded-md 
+                     fixed top-5 w-full max-w-3xl mx-auto transition-transform duration-300 z-50 ">
+                    
+              <!-- Cursor shine overlay -->
+              <div 
+                id="cursor-shine" 
+                class="absolute inset-0 pointer-events-none" 
+                style="background: radial-gradient(200px circle at 0 0, rgba(255,255,255,0.05), transparent 70%);"
+              ></div>
+                    
+              <!-- Logo -->
+              <div>
+                <img src="./attributes/Crabby.jpg" alt="pfp" class="h-8 w-8 rounded-full border border-neutral-700">
+              </div>
+          
+              <!-- Desktop Nav Links -->
+              <div class="hidden md:flex space-x-6 text-neutral-400 font-medium">
+                <a href="#intro" class="nav-link transition-colors duration-200 hover:text-white hover:bg-zinc-800 py-2 px-3 rounded-full">Intro</a>
+                <a href="#skills" class="nav-link transition-colors duration-200 hover:text-white hover:bg-zinc-800 py-2 px-3 rounded-full">Skills</a>
+                <a href="#projects" class="nav-link transition-colors duration-200 hover:text-white hover:bg-zinc-800 py-2 px-3 rounded-full">Projects</a>
+                <a href="#contact" class="nav-link transition-colors duration-200 hover:text-white hover:bg-zinc-800 py-2 px-3 rounded-full">Contact</a>
+              </div>
+          
+              <!-- Hamburger Button (Mobile only) -->
+              <button id="menu-btn" class="md:hidden text-neutral-300 hover:text-white focus:outline-none">
+                ☰
+              </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class=" flex justify-between space-y-4 items-center mt-2 bg-zinc-950 border border-neutral-900 rounded-md p-4 text-neutral-400 font-medium md:hidden">
+              <a href="#intro" class="nav-link hover:text-white">Intro</a>
+              <a href="#skills" class="nav-link hover:text-white">Skills</a>
+              <a href="#projects" class="nav-link hover:text-white">Projects</a>
+              <a href="#contact" class="nav-link hover:text-white">Contact</a>
+            </div>
+
+
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            
+
+        <!-- Introduction Badge with Shine -->
+        <div id="intro" class="relative topic-badge p-3 inline-flex items-center gap-2 border-2 border-zinc-900 rounded-lg text-gray-200 font-medium overflow-hidden transition-all duration-300">
+            <i class="fas fa-user text-blue-400"></i>
+            <span class="relative z-20">Introduction</span>
+            <div class="absolute inset-0 w-full h-full shine-overlay topic-badge-shine z-10"></div>
+        </div>
+        <br>
+        <br>
+        <div>
+            <h1 class="text-5xl font-bold text-gray-200">Hi, I'm VasuDev</h1>
+            <br>
+            <p class="text-2xl font-medium text-gray-400">A Full Stack Developer passionate about AI solutions and crafting seamless experiences</p>
+            <br>
+            <p class="text-gray-400">I specialize in building web apps with <span class="text-gray-50 font-medium">Next.js, React, FastAPI, Tailwind CSS, Node.js and more.</span> Always excited to tackle new challenges where I can create value and grow as a coder. Let's connect if you've got a project that could use my skills!</p>
+        </div>
+        <br>
+        <hr class="border-gray-800">
+        <br>
+        <br>
+        
+        <!-- Skills Badge with Shine -->
+        <div id="skills">
+            <div class="relative topic-badge p-3 inline-flex items-center gap-2 border-2 border-zinc-900 rounded-lg text-gray-200 font-medium overflow-hidden transition-all duration-300">
+                <i class="fas fa-code text-green-400"></i>
+                <span class="relative z-20">Skills</span>
+                <div class="absolute inset-0 w-full h-full shine-overlay topic-badge-shine z-10"></div>
+            </div>
+            <br>
+            <br>
+            <p class="text-3xl font-medium text-gray-200">Skills I have</p>
+            <p class="text-gray-400">Technologies I have worked with and enjoy using</p>
+            <ol class="list-disc ml-6 text-zinc-200 font-medium">
+                <li>
+                    <p>Languages</p>
+                    <div class="flex flex-wrap justify-start gap-4 p-4">
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fab fa-js-square text-yellow-400"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fab fa-python text-blue-400"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fab fa-html5 text-orange-500"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fab fa-css3-alt text-blue-500"></i>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <p>Frameworks</p>
+                    <div class="flex flex-wrap justify-start gap-4 p-4">
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fab fa-react text-cyan-400"></i>
+                            <span>React</span>
+                        </div>
+                        
+                        
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fas fa-wind text-teal-400"></i>
+                            <span>Tailwind</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <p>Tools</p>
+                    <div class="flex flex-wrap justify-start gap-4 p-4">
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fab fa-git-alt text-orange-500"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fab fa-github text-gray-300"></i>
+                            <span>Github</span>
+                        </div>
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fab fa-docker text-blue-400"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fab fa-figma text-purple-400"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fas fa-code text-blue-500"></i>
+                            <span>VS CODE</span>
+                        </div>
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fas fa-robot text-green-400"></i>
+                            <span>ChatGPT</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <p>Databases</p>
+                    <div class="flex flex-wrap justify-start gap-4 p-4">
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fas fa-database text-blue-400"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="tech-tag border-gray-900 p-2 text-center border rounded-md flex items-center gap-2 cursor-pointer">
+                            <i class="fas fa-leaf text-green-500"></i>
+                            <span>MongoDB</span>
+                        </div>
+                       
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <br>
+        <hr class="border-gray-800">
+        <br>
+        <br>
+        
+        <!-- Projects Badge with Shine -->
+        <div id="projects">
+            <div class="relative topic-badge p-3 inline-flex items-center gap-2 border-2 border-zinc-900 rounded-lg text-gray-200 font-medium overflow-hidden transition-all duration-300">
+                <i class="fas fa-folder-open text-purple-400"></i>
+                <span class="relative z-20">Projects</span>
+                <div class="absolute inset-0 w-full h-full shine-overlay topic-badge-shine z-10"></div>
+            </div>
+            <br>
+            <br>
+            <p class="text-3xl font-medium text-gray-200">My Projects</p>
+            <p class="text-gray-400 py-3">Explore some of the projects I've worked on. These showcase my skills and expertise in various domains of software development.</p>
+            <br>
+            
+            <div class="flex border rounded-md p-2 border-zinc-900">
+               <div class="w-1/2 p-4 bg-gray-800 rounded-md"></div>
+               <div class="w-1/2 px-4 pt-2">
+                    <h2 class="text-2xl font-medium text-gray-400">CultureCompass</h2>
+                    <p class="text-sm">Culture Compass is a chatbot designed to help travelers understand different cultures. It answers questions about customs, traditions, and etiquette, providing clear guidance so users can navigate new places respectfully and have a more meaningful travel experience.</p>
+                    <div class="flex flex-wrap gap-3 pt-2 ">
+                        <div class=" border-gray-900 p-2 text-center border rounded-md">HTML</div>
+                        <div class=" border-gray-900 p-2 text-center border rounded-md">CSS</div>
+                        <div class=" border-gray-900 p-2 text-center border rounded-md">JavaScript</div>
+                        <div class="  border-gray-900 p-2 text-center border rounded-md">GeminiAPI</div>
+                    </div>
+                    <div class="py-3 flex justify-between">
+                        <div class="border border-zinc-900 p-2 rounded-md">21/02/2025</div>
+                        <div><a href="https://github.com/Vasu-Devs/CultureCompass"><i class="fab fa-github text-gray-400 hover:text-white text-xl"></i></a></div>
+                    </div>
+               </div> 
+            </div>
+
+            
+            </div> 
+            <br><br>
+            
+            <hr class="border-zinc-900">
+            <br>
+            <br>
+            
+            <!-- Contact Badge with Shine -->
+            <div id="contact" class="relative topic-badge p-3 inline-flex items-center gap-2 border-2 border-zinc-900 rounded-lg text-gray-200 font-medium overflow-hidden transition-all duration-300">
+                <i class="fas fa-envelope text-orange-400"></i>
+                <span class="relative z-20">Contact</span>
+                <div class="absolute inset-0 w-full h-full shine-overlay topic-badge-shine z-10"></div>
+            </div>
+            <br>
+            <br>
+            <p class="text-3xl font-medium text-gray-200">Let's connect</p>
+            <p class="text-gray-400 py-3 text-sm">I'm always excited to collaborate on interesting projects or just have a great tech conversation!</p>
+            <div class="border border-zinc-900 text-center rounded-md p-10">
+                <p class="text-zinc-200 text-2xl font-medium">Ready to start a conversation?</p>
+                <p class="inline-flex items-center gap-2 border border-zinc-900 p-2 mt-4 bg-zinc-900 rounded-md text-zinc-200">
+                    <i class="fas fa-envelope text-blue-400"></i>
+                    siddhvasudev1402@gmail.com
+                </p>
+                <div class="space-x-2">
+                    <a href="https://x.com/Vasu_Devs" class="inline-flex items-center gap-2 border border-zinc-900 p-2 mt-4 bg-zinc-900 rounded-md text-zinc-200 hover:bg-zinc-800 transition-colors">
+                        
+                        <i class="fa-brands fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="https://github.com/Vasu-Devs" class="inline-flex items-center gap-2 border border-zinc-900 p-2 mt-4 bg-zinc-900 rounded-md text-zinc-200 hover:bg-zinc-800 transition-colors">
+                        <i class="fab fa-github text-gray-300"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vasu-devs/" class="inline-flex items-center gap-2 border border-zinc-900 p-2 mt-4 bg-zinc-900 rounded-md text-zinc-200 hover:bg-zinc-800 transition-colors">
+                        <i class="fab fa-linkedin text-blue-500"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <p class="inline-flex items-center  gap-2 border border-zinc-900 p-2 mt-4 bg-zinc-900 rounded-md text-zinc-200">
+                    <i class="fas fa-clock text-green-400"></i>
+                    I typically respond within an hour
+                </p>
+            </div>
+            <br><br>
+        </div>
+   </div>
+
+<script>
+   
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+  // Cursor-following shine
+  const shine = document.getElementById("cursor-shine");
+  const navbar = document.getElementById("navbar");
+
+  navbar.addEventListener("mousemove", (e) => {
+    const rect = navbar.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    shine.style.background = `radial-gradient(250px circle at ${x}px ${y}px, rgba(255,255,255,0.03), transparent 50%)`;
+  });
+
+  // Scroll spy effect
+  const sections = document.querySelectorAll("section, #intro, #skills, #projects, #contact"); 
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (scrollY >= sectionTop - 100) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("text-white");
+      link.classList.add("text-neutral-400");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("text-white");
+        link.classList.remove("text-neutral-400");
+      }
+    });
+  });
+
+  // Hide navbar on scroll down, show on scroll up
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 50) {
+      // scrolling down -> hide navbar
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      // scrolling up -> show navbar
+      navbar.style.transform = "translateY(0)";
+    }
+    lastScroll = currentScroll;
+  });
+</script>
+
+
+</body>
+</html>
